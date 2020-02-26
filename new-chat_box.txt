@@ -1,0 +1,403 @@
+@extends('employer.layout.default')
+@section('content')
+<?php $index = 0; ?>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card" id="">
+                <div class="header">                    
+                    <div class="row">
+                    <form action="{{ route('canditate.resume') }}">
+                        {{ csrf_field()}}
+                        <div class="col-md-6">
+                            <div class="rcvd-rsm">
+                                <h2>Received Resumes For </h2>
+                                <div class="form-group">
+                                    <select name="job" onchange="this.form.submit()" class="form-control">
+                                    <option value="">Select</option>
+                                    @foreach($applied_jobs_title as $applied_jobs_title)
+                                        <option <?php if($job ==$applied_jobs_title->id ) echo "selected='selected'"; ?> value="{{ $applied_jobs_title->id ?? '' }}">{{ $applied_jobs_title->title ?? '' }}</option>
+                                    @endforeach    
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">                                    
+                            <div class="rcvd-rsm">
+                                <h2>Sort By Status</h2>
+                                <div class="form-group">
+                                
+                                        <select name="q" onchange="this.form.submit()" class="form-control form-control-sm" >
+                                        <option value="">Select</option>
+                                            @foreach(['pending', 'rejected', 'selected', 'invited', 'waiting'] as $status)
+                                            <option  value="{{ $status }}" <?php if($q ==$status ) echo "selected='selected'"; ?>>{{ ucfirst($status) }}</option>
+                                            @endforeach
+                                        </select>     
+                                </div>           
+                                        </div>
+                                    </div>
+                                    </form>
+                            </div>
+                        </div>
+                </div>
+                <div class="succes" id="msg-success" style="display:none" >
+                    <a href="#" class="msg-success"></a>
+                </div>
+                <div class="boy-data">
+                    <div class="table-responsive usr-data">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                <th>No.</th>
+                                <th>Candidate Name</th>
+                                <th>Position & Exp.</th>
+                                <th>Skills Match</th>
+                                <th>Job Apply Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($applied_jobs as $index=>$applied_job)
+                                <tr>
+                                    <td>{{$index + $applied_jobs->firstItem()}}</td>
+                                    <td>{{$applied_job->user->name}}  {{$applied_job->user->lname}}</td>
+                                    <td>{{ $applied_job->user->designation }} ({{ $applied_job->user->total_exp }})</td>
+                                    <td>10/9 Match</td>
+                                    <td>{{ $applied_job->created_at->format('d M, Y')  }} </td>   
+                                    <td class="dropdown status">
+                                        <button class="btn btn-default dropdown-toggle" id="status-dropdown" type="button" data-toggle="dropdown">
+                                        @if($applied_job->status == 'invited')Invite
+                                        @elseif($applied_job->status == 'waiting')Waiting List
+                                        @elseif($applied_job->status == 'selected')Selected
+                                        @elseif($applied_job->status == 'rejected')Rejected
+                                        @else
+                                        Pending
+                                        @endif<span class="caret"></span></button>                                                                         
+                                        <ul class="dropdown-menu">
+                                            <li><a href="" data-toggle="modal" value="invite" data-target=".int_sd_{{$applied_job->id}}">Invite</a></li>
+                                            <li><a href="#" data-id="{{$applied_job->id}}" value="waiting" onclick="enableTxt(this)" name="waiting_{{$applied_job->id}}">Waiting List</a></li>
+                                            <li><a href="#" data-id="{{$applied_job->id}}" value="selected" onclick="enableTxt(this)" name="selected_{{$applied_job->id}} ">Selected</a></li>
+                                            <li><a href="#" data-toggle="modal" value="rejected" data-target=".int_rjct_{{$applied_job->id}}">Reject</a></li>
+                                        </ul>
+                                    </td>
+                                    <td class="action">
+                                        <a href="{{route('candidate.profile', ['id' => encrypt($applied_job->user_id)])}}" class=""><img src="{{ url('') }}/images/employer/View.png" alt=""></a>
+                                        <a href="#" class="" id="ab"><img src="{{ url('') }}/images/employer/message.png" alt=""></a>
+                                        <!-- <a href="{{route('employer.message')}}" class="" id="ab"><img src="{{ url('') }}/images/employer/message.png" alt=""></a> -->
+                                        <a href="#" id="{{ $applied_job->id }}" class="" onclick="<?php if($applied_job->status != 'rejected'){ echo 'return false'; } else { echo 'deletejob(this)'; } ?>"  data-toggle="confirmation"><img src="{{ url('') }}/images/employer/Delete.png" alt=""></a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                            
+                        </table>
+                        <div class="paginations">
+                        <p class="pull-left lst-show">Showing {{ $applied_jobs->firstItem() }} to {{$index + $applied_jobs->firstItem()}}  of {{ $applied_jobs->total() }} entries</p>
+                                <ul class="pagination pull-right">
+                                    {{ $applied_jobs->links() }}
+                                </ul> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- The Rejecting Modal -->
+    @foreach($applied_jobs as $applied_job)
+    <!-- The Rejecting Modal -->
+
+    <div class="modal int_rjct_{{$applied_job->id}}" id="reject">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Rejected Email For Paul Molive</h4>
+                </div>
+                <div class="modal-header">
+                    <p>Application For</p>
+                    <strong>{{ $applied_job->user->designation }} at {{ $applied_job->interview_venue }} .</strong>                   
+                   
+                    <form action="" style="margin-bottom:0;" id="rejected_form_{{$applied_job->id}}" name="rejected_form_{{$applied_job->id}}">
+                    @csrf
+                    <input type="hidden" name="applied_id" value="{{$applied_job->id}}">
+                    <input type="hidden" name="status" value="rejected"> 
+                        <div class="form-group" style="margin:0;">
+                            <p style="margin-top: 10px;">Reason For Rejection</p>
+                            <select class="form-control" name="reason" id="sel1">
+                                <option>Technical Skills Not Match</option>
+                                <option>Technical Skills</option>
+                                <option>Technical Skills Match</option>
+                            </select>
+                        </div> 
+                </div>
+                <!-- Modal body -->
+                <div class="rj-body">
+                    <h4>Job Description</h4>
+                    <div class="sincr">
+                        <p>Sincerly</p>
+                        <p>{{ $auth_name }}</p>
+                    </div>
+                </div>
+                <div class="sbmt-btn">
+                <div class="success-rjct" id="success-msg-rjct" style="display:none" >
+                    <a href="#" class="success-msg-rjct"></a>
+                </div>
+                    <button type="button" class="btn btn-default">Cancel</button>
+                    <button type="button" onclick="rejectedformsubmit({{$applied_job->id}})" class="btn btn-info">Send Invitation</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    @endforeach
+
+@foreach($applied_jobs as $applied_job)
+    <!-- The Modal -->
+    <div class="modal int_sd_{{$applied_job->id}}"  id="int-sd">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Inviting For Interview</h4>
+            </div>
+            <div class="modal-header">
+                <p style="float:left;">Candidate Name: {{$applied_job->user->name}}  {{$applied_job->user->lname}}</p>
+                <p class="text-center">Total Experience: {{ $applied_job->user->total_exp }}</p>
+                <p>Position: {{ $applied_job->user->designation }}</p>
+                <strong>Skills</strong>
+                @foreach($applied_job->user->users_skill as $skill)                
+                {{ $skill->skills->name }}, 
+                @endforeach
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="invite-intrvw">
+                    <div class="alert alert-danger print-error-msg" style="display:none">
+                        <ul></ul>
+                    </div>
+                    <form action="{{ route('candidate.interview.status') }}" class="invite-form" id="invite-form_{{$applied_job->id}}" name="invite-form_{{$applied_job->id}}">
+                    @csrf
+                    <input type="hidden" name="applied_id" value="{{$applied_job->id}}">
+                    <input type="hidden" name="status" value="invited">
+                    <input type="hidden" name="name" value="{{ $applied_job->user->name }} {{ $applied_job->user->lname }}">
+                    <input type="hidden" name="email" value="{{ $applied_job->user->email }}">
+                    <input type="hidden" name="address" value="{{ $applied_job->user->email }}">
+                   <!--  <input type="hidden" name="message" value="Welcome"> -->     
+                    <label>Interview Type</label>
+                        <div class="intrvw-typ">
+                            <!-- <div class="checkbox">
+                                <input type="radio"  name="invite" value="FTF">FACE TO FACECE</label>   
+                            </div>
+                            <div class="checkbox">
+                                <input type="radio"  name="invite" value="telephonic">TELEPHONE
+                                
+                            </div>
+                            <div class="checkbox">
+                                <input type="radio"  name="invite" value="FTF">Video
+                            </div> -->
+                            <div class="checkbox c-actv">
+                                <input type="radio" checked="checked" name="radio">
+                                <span class="checkmark"></span><span class="f-fce">FACE TO FACECE</span>
+                            </div>
+                            <div class="checkbox">
+                                <input type="radio" name="radio">
+                                <span class="checkmark"></span><span class="f-fce">TELEPHONE</span>
+                            </div>
+                            <div class="checkbox">
+                                <input type="radio" name="radio">
+                                <span class="checkmark"></span><span class="f-fce">Video</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Date</label>
+                                    <input type="date"  name="date" class="form-control" placeholder="DD/MM/YY">
+                                    <span style="color:red;">
+                                        <span class="invalid-feedbackkk" role="alert">
+                                        </span>
+                                    </span>                                
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Start Time</label>
+                                    <input type="time" name="start_time" class="form-control" placeholder="11:30" value="09:00">
+                                </div>
+                                <div class="col-md-4">
+                                    <label>End Time</label>
+                                    <input type="time" name="end_time" class="form-control" placeholder="12:30" value="06:00">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Interview Address*</label>
+                                    <textarea class="form-control" rows="3" id="comment" name="address" placeholder="Enter Address " style="resize: none;">{{ $applied_job->interview_venue }}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Message</label>
+                                    <textarea class="form-control" name="message" rows="3" id="comment" placeholder="Enter message" style="resize: none;"></textarea>                               
+                                </div>
+                            </div>
+                        </div><hr>
+                        <div class="intrvwr-dtl">
+                            <p style="font-weight:500;">Interviewer ID</p>  
+                            <input type="email" class="form-control" name="interviewer_id" placeholder="cypress24@gmail.com"> 
+                        <div class="success" id="success-msg" style="display:none" >
+                            <a href="#" class="success-msg"></a>
+                        </div>
+                        <div class="smt-btn">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button type="button" onclick="formsubmit({{$applied_job->id}})" class="btn btn-info">Send Invitation</button>
+                        </div>          
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+@endforeach
+
+<!-- rejecting candidate -->
+<script type="text/javascript">   
+    function rejectedformsubmit(id){
+        //event.preventDefault()
+        var $inputs = $('#rejected_form_'+id+' :input');
+
+        var values = {};
+        $inputs.each(function() {
+            values[this.name] = $(this).val();
+        });
+        
+        $.ajax({
+            type     : "POST",
+            url      : "{{route('candidate.interview.status')}}",
+            data     : values,
+            cache    : false,
+
+            success  : function(data) { 
+                $("#status-dropdown").html('Rejected <span class="caret"></span>');
+                $(".success-msg-rjct").append(data.success);  
+                $('#success-msg-rjct').show();     
+                    setTimeout(function(){ $("div.success-rjct").remove(); }, 5000 );  
+                
+            }
+        });
+        return false;
+    } 
+</script>
+
+<!-- inviting candidate -->
+
+<script type="text/javascript">    
+    function formsubmit(id){
+        //event.preventDefault()
+        var $inputs = $('#invite-form_'+id+' :input');
+
+        var values = {};
+        $inputs.each(function() {
+            values[this.name] = $(this).val();
+        });
+        
+        $.ajax({
+            type     : "POST",
+            url      : "{{route('candidate.interview.status')}}",
+            data     : values,
+            cache    : false,
+
+            success  : function(data) { 
+                if($.isEmptyObject(data.error)){
+                    $("#status-dropdown").html('Invite <span class="caret"></span>');
+                    $(".success-msg").append(data.success); 
+                    $('#success-msg').show();  
+                    setTimeout(function(){ $("div.success").remove(); }, 5000 );    
+                }else{
+                printErrorMsg(data.error);
+                }                    
+            }
+
+        });
+        return false;
+    }
+    function printErrorMsg (msg) {
+        $(".print-error-msg").find("ul").html('');
+        $(".print-error-msg").css('display','block');
+            $.each( msg, function( key, value ) {
+                $(".print-error-msg").find("ul").append('<li>'+value+'</li>');
+
+            });
+    }
+</script>
+
+<!-- update waiting -->
+
+<script>
+    function enableTxt(elem) 
+    {
+        var text = $(elem).text();
+        var applied_id = $(elem).attr("data-id");
+        var status = $(elem).attr("value");
+        var rr = $(elem).attr('');
+        $.ajax({
+            type:'POST',
+            url:"{{ route('candidate.interview.status') }}",
+            data:{applied_id:applied_id, status:status, _token: '{{csrf_token()}}'},
+            success:function(data){
+                $("#status-dropdown").html(text + '<span class="caret"></span>');
+                $(".msg-success").append(data.success);  
+                    $('#msg-success').show();     
+                        setTimeout(function(){ $("div.succes").remove(); }, 5000 ); 
+            }
+        });
+
+    }
+</script>
+
+<!-- Delete job -->
+<script>
+    function deletejob(elem) 
+    {
+        var id = $(elem).attr("id");
+
+        var result = confirm("Are you sure you Want to delete this job");
+        if(result) {
+            $.ajax({
+            type:'POST',
+            url:"{{ route('delete.appliedjob') }}",
+            data:{id:id,  _token: '{{csrf_token()}}'},
+            success:function(data){
+               console.log(data);
+            }
+        });
+
+        }
+
+    }
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(".checkbox").click(function(){
+            $(".checkbox").removeClass("c-actv");
+            $(this).addClass("c-actv");
+        });
+    });
+</script>
+
+<script>
+$(document).ready(function(){
+    $("#abb").click(function(){
+    alert("Hello");
+    //$(".chat_box").addClass("acts");
+    })
+});
+
+</script>
+@stop

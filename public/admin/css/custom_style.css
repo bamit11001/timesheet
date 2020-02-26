@@ -1,0 +1,1104 @@
+﻿body {
+   margin:0px;
+   padding:0px;
+   background: #F9FAFB;
+   font-family: 'Roboto', sans-serif;
+}
+.theme-blue .sidebar .menu .list li a span{  
+font-size: 15px;;
+}
+
+.theme-blue .sidebar .menu .list li.active a span{
+  color:#FF6600 !important;font-weight: 600;
+}
+
+.theme-blue .sidebar .menu .list li{
+  border-bottom: 1px #F2F2F2 solid;
+}
+.theme-blue .sidebar .menu .list li.active a i{
+  color:#FF6600 !important;
+}
+
+.theme-blue .content .block-header{
+      margin-bottom:0px;
+}
+
+.sidebar .menu .list a {
+    padding: 17px 13px;
+}
+.card {
+  border-radius: 0px;
+  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0;
+}
+.theme-blue .navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.theme-blue .nav > li > a i{
+  color: #707070;
+}
+li.user_pic a{ margin-top:13px; }
+
+li.user_pic a span.usr_img{
+  width: 36px;
+  height: 36px;
+  margin-left: 8px;
+}
+li.user_pic a span.usr_img img{ width:100%;}
+
+.sidebar{
+  width: 220px;
+}
+
+section.content {
+    margin: 100px 15px 0 235px;
+}
+
+.card .header h2 {
+   font-weight: bold;
+ }
+
+.user_pic a span {
+    color: #707070;
+    float: left;
+    line-height: 17px;
+    text-transform:capitalize;
+    font-weight:600;
+}
+
+.navbar a.help{
+  position: relative;
+  width: 70px;
+  border-right: 1px solid gray;
+}
+a.help span{position: absolute; color:gray;}
+
+  .user_pic a span b{
+    display: block;
+    text-align:right;
+    font-weight:normal;
+    font-size: 12px;
+    color:#FF6600;
+  }
+
+.search {
+    display: inline-block;
+    margin-left: 6%;
+    margin-top: 22px;
+    width: 24%;
+}
+
+  .search .input-group{
+    margin:0px;
+  }
+
+  .search .input-group{
+    border-radius:6px;
+    border:1px solid #ccc;
+    padding-left:15px;
+    background:#fff;
+  }
+
+.form-group .form-control {
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+#post_job .form-group{
+  margin-bottom:0px;
+}
+
+#post_job .form-control {
+    padding-left:15px;
+}
+
+.form-group input{
+    height: 45px;
+}
+
+#post_job .header h2 { display: inline-block; }
+
+.pd{ padding:0px;}
+
+.pL{ padding-left:0px; }
+
+.pR{ padding-right:0px; }
+
+#post_job label {margin-bottom:5px; }
+
+#post_job .pd .col-md-3, #post_job .pd .col-md-8, #post_job .pd .col-md-4{ margin-bottom:0px; }
+
+.form-group select {
+   height: 45px;
+}
+.btn.btn-primary{
+    border-radius: 25px!important;
+    position: relative;
+    top: -8px;
+}
+.btn-primary{
+  font-size:15px!important;
+  font-weight:500;
+  background: #FF6600!important;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0), 0 0px 0px rgba(0, 0, 0, 0.0)!important;
+  padding: 8px 20px;
+}
+.btn-primary:focus, .btn-primary:active{background:#FF6600 !important;}
+
+.btn-primary:hover{
+  background: #ec6002!important;
+}
+
+#job-list .td-hrd {
+  background-color: #f9f9f9;
+}
+
+/* .table-responsive{
+  overflow:hidden;
+} */
+
+.pagination li.active a {
+    background-color: #2196F3;
+    border-radius: 50%;
+    border: 1px solid #337ab7;
+}
+
+.action .btn-circle i{
+  top:6px;
+}
+
+
+table.dataTable {
+    border: 1px solid #f7f7f7;
+    border-top:1px solid #eaeaea;
+}
+
+
+#job-list .table tbody tr td{
+    padding: 20px 10px!important;
+    vertical-align: baseline;
+    font-size:18px;
+    font-weight: 500;
+}
+
+
+.td-hrd tr th.no{
+    width: 60px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+#job-list .table tbody tr td.no{
+    width: 60px;
+    text-align: left;
+    padding-left: 20px!important;
+}
+
+#job-list .table tbody tr td a {
+  color: #004CFF;
+  text-decoration:underline;
+  }
+
+
+#job-list .status {
+  border-radius:25px;
+  border:1px solid #ccc;
+  height:40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.0), 0 2px 10px rgba(0, 0, 0, 0.0);
+  overflow:hidden;
+}
+
+#job-list .status label{
+  width:75px;
+  font-size:14px;
+  font-weight:500;
+  
+  padding:10px 0px;
+}
+
+#job-list .status .active{
+  background:#039512;
+  color:#fff;
+  font-size:14px;
+}
+
+#job-list .status .deactive.active{
+  background:#F50000;
+  color:#fff;
+  font-size:14px;
+}
+
+#job-list .action .bg-blue-grey {
+    background-color: #555656 !important;
+    color: #fff;
+}
+
+
+/* New style starts */
+
+/* common style start  */
+.mb{margin-bottom: 0 !important;}
+table{font-size: 13px;}
+table thead tr th, table tbody tr td{vertical-align: middle !important; text-align: center;}
+table thead{background-color: #f3f3f3;}
+table tr td .form-group{margin-bottom: 0;}
+
+/* common style end */
+
+/* resume page */
+.rcvd-rsm h2{
+float: left;
+margin: 12px 12px 0 0 !important;
+}
+.rcvd-rsm .form-group{
+  float: left;
+  width: 40%;
+  margin-bottom: 0;
+}
+.usr-data, .joblist_body{box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); background-color: #fff;}
+.usr-data, .joblist_body .job_list_table{ background-color: #fff;}
+.usr-data .table tbody tr td, .usr-data .table tbody tr th{padding: 10px 16px;}
+.usr-data .form-group select {
+  height: 35px;
+  font-size: 13px;
+}
+.usr-data td.dropdown .dropdown-menu{left:40px;}
+.usr-data .form-group .form-control{width: 80%;}
+
+.usr-data p.lst-show{margin: 20px 0 20px 16px;}
+/* .usr-data td.action img{
+  width: 20px;
+  height: 20px;
+} */
+/* resume page end*/
+.job_list_table .table tbody tr td.resume-view{cursor: pointer;}
+.joblist_body .paginations, .usr-data .paginations{width: 100%; float: left; padding: 10px 20px;}
+.joblist_body .paginations p, .usr-data .paginations p{margin: 10px 0px 0px 0px;}
+.joblist_body .paginations .pagination, .usr-data .paginations .pagination{margin: 0;}
+.joblist_body .pagination .page-link, .usr-data .pagination .page-link, .usr-data .pagination .page-link, .usr-data .pagination .page-link{width: 32px; height: 32px; border-radius: 50%;}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{border-radius: 50%; background-color:#05F; border-color:#05F;}
+
+/* style for web & Graphic Desiner */
+.job_post .modal-content{
+border-radius: 5px;}
+.job_post .modal-header{
+  padding: 20px !important;
+  border-bottom: 1px solid#e5e5e5 !important;
+}
+.job_post .modal-header .modal-title{margin-bottom: 20px;}
+.job_post .positn p.one{
+  float: left;
+  margin-right: 35%;
+}
+.job_post .yer-sell p.yrs{
+  display: inline-block !important; 
+  float: left !important;
+  margin-right: 20px !important;
+}
+.job_post .modal-body{padding: 20px 20px;}
+.job_post .responsiblity .navbar-nav{float: none; list-style: disc;}
+.job_post .responsiblity ul li{
+  list-style-type: disc;
+display: inline flow-root list-item;
+font-size: 13px;
+display: block;
+}
+
+.job_post .modal-body h4{font-size: 14px;}
+.job_post .modal-body p{font-size: 13px;}
+.job_post .description{margin-bottom: 20px;}
+
+.job_post .rqrd{margin-top: 20px;}
+
+
+/* Style for register page */
+.user-form{
+  background-color:#f3f9fe;
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 2px rgba(10,16,20,.24),0 0 2px rgba(10,16,20,.12);
+}
+.user-for .form-control{padding: 10px 15px;}
+
+/* Style for Schedule Interview(pop-up) */
+#int-sd .modal .modal-content, .modal-content{border-radius: 5px !important;}
+#int-sd .modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+#int-sd .close{
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+#int-sd .modal-body{padding:15px 15px 0px 15px;}
+#int-sd .invite-intrvw form{margin-bottom: 0px;}
+#int-sd .invite-intrvw .intrvw-typ{
+  padding: 10px 10px;
+  display: flex;
+  justify-content: start;
+  margin-bottom: 16px;
+}
+#int-sd .invite-intrvw .intrvw-typ .checkbox{
+margin: 0;
+padding: 6px 10px;
+border: 1px solid gray;
+border-radius: 30px;
+color: #686767;
+margin-right: 10px;
+}
+#int-sd .invite-intrvw .intrvw-typ .checkbox input{left:4px; opacity: 0; z-index: 100; top: 0px; background-color:red;
+  height: 88%;
+  width: 98%;
+}
+#int-sd .invite-intrvw .form-control{padding: 12px;}
+#int-sd .invite-intrvw .dt{padding: 0 12px;}
+.c-actv{background-color: #f60; border-color: #f60 !important; color:#fff !important;}
+
+/* .regular-radio{display: none;} */
+/* .regular-radio + label{
+  -webkit-appearance: none;
+  background-color:
+  #fafafa;
+  border: 1px solid
+  #cacece;
+  box-shadow: 0 1px 2px
+  rgba(0,0,0,0.05), inset 0px -15px 10px -12px
+  rgba(0,0,0,0.05);
+  padding: 9px;
+  border-radius: 50px;
+  display: inline-block;
+  position: relative;
+} */
+/* .regular-radio:checked + label{
+  background-color:#e9ecee;
+  color: green;
+  border: 1px solid #adb8c0;
+}
+.regular-radio + label{
+  -webkit-appearance: none;
+  background-color: #fafafa;
+  border: 1px solid #cacece;
+  box-shadow: 0 1px 2px
+  rgba(0,0,0,0.05), inset 0px -15px 10px -12px
+  rgba(0,0,0,0.05);
+  padding: 9px;
+  border-radius: 0 !important;
+  display: inline-block;
+  position: relative;
+}
+.regular-radio:checked + label::after{
+  width: 12px;
+  height: 12px;
+  content: '\2714';
+  background-color: red !important;
+  border-radius: 0 !important;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  font-size: 11px;
+  line-height: 16px;
+} */
+.checkbox{
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  height: 34px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 4px;
+  left: 12px;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox:hover input ~ .checkmark {
+  background-color: #eee;
+}
+
+/* When the radio button is checked, add a blue background */
+.checkbox input:checked ~ .checkmark {
+  background-color: #fff;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.checkbox .checkmark:after {
+ 	top: 3px;
+	left: 6px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+  background: transparent;
+  content: '\2714';
+  color:#f60;
+  font-weight: 600;
+}
+.checkbox .f-fce{
+  float: left;
+  margin: 2px 0 0 34px;
+  font-size: 13px;
+}
+
+
+
+
+/* .regular-radio:checked + label::before{display:none} */
+
+
+/* .custom-control{
+  position: relative;
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5rem;
+}
+.custom-control [type="radio"]:checked + label::before{
+  border-color:
+  #007bff;
+  background-color:
+  #007bff;
+  content: '\2714';
+  font-size: 14px;
+} */
+
+
+
+
+#int-sd .invite-intrvw .intrvwr-dtl span.info a{
+  color:#f60;
+  font-size: 13px;
+  margin-left: 30px;
+display: inline-block;
+margin-top: 0;
+}
+#int-sd .invite-intrvw .intrvwr-dtl a{
+  display: block;
+  font-size: 13px;
+  margin-top: 10px;
+  color:#f60;
+}
+#int-sd .invite-intrvw .smt-btn{margin-top: 30px; text-align: center; margin-left: -19px; margin-right: -19px;}
+#int-sd .invite-intrvw .smt-btn .btn{
+width: 49%;
+padding: 30px 40px;
+font-size: 14px;
+font-weight: 500;
+}
+#int-sd .invite-intrvw .smt-btn .btn-info{
+  background-color:#f60 !important;
+  border-color:#f60 !important;
+}
+#int-sd .invite-intrvw .form-control:focus{border-color: #f60;}
+
+/* Style end for Schedule Interview(pop-up) */
+
+/* Style start rejecte email(pop-up) */
+.rj-body p {
+  font-size: 13px;
+}
+#reject .modal-header{
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+#reject  .rj-body{padding: 15px;}
+#reject  .rj-body .sincr{margin: 30px 0px 10px 0px;}
+#reject .sbmt-btn .btn{
+  width: 49.7%;
+  padding: 30px 60px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 0 0 5px 5px;
+}
+#reject .sbmt-btn .btn-info{
+  background-color:#f60 !important;
+  border-color:#f60 !important;
+}
+#reject .form-control{padding: 12px;}
+#reject .form-control:focus{border-color: #f60;}
+
+/* Style start for msg-inbox*/
+.msg-inbox .message{
+  min-height: 430px;
+}
+.msg-inbox .message .left-side {
+  border: 1px solid #ccc; padding: 0px;
+min-height: 400px;
+max-height: 400px;
+overflow-y: scroll;
+overflow-x: hidden;
+}
+.msg-inbox .message .left-side .form-inline{margin: 2px 3px 2px 1px;}
+.msg-inbox .message .left-side .form-group{ width: 83%;}
+.msg-inbox .message .left-side .form-group .form-control{padding: 10px; border: none;}
+.msg-inbox .message .left-side .btn{box-shadow: none;}
+
+.msg-inbox .message .left-side .tabs .nav-tabs{border-bottom: 0px;}
+.msg-inbox .message .left-side  .tabs .nav-tabs li{display: block; width: 100%; cursor: pointer;}
+
+
+.nav-tabs > li.active > div{background-color:#FFF7F2;}
+.msg-inbox .message .left-side .box{
+width: 100%;
+float: left;
+border-bottom: 1px solid
+#ccc;
+margin-bottom: 10px;
+padding: 10px;
+border-top: 1px solid
+#ccc;
+}
+.msg-inbox .message .left-side .img-box{
+  width: 60px;
+  float: left;
+  margin-right: 10px;
+}
+.msg-inbox .message .left-side .img-box img{
+  width: 50px !important;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+/* .msg-inbox .message .left-side .img-box img{
+  border: 1px solid #ccc;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+} */
+.msg-inbox .message .left-side .content{width: calc(100% - 70px); float: left;}
+.msg-inbox .message .left-side .content p{margin-bottom: 0px;}
+
+.msg-inbox .right-side{
+  border: 1px solid#ccc;
+  padding: 10px;
+  width: 100%;
+  float: left;
+  height: 400px;
+  position: relative;
+}
+.msg-inbox .right-side .bodyy{
+  padding: 20px;
+  height: calc(100% - 100px);
+  overflow: auto;
+  word-wrap: break-word;
+}
+
+.msg-inbox .right-side .usercontents{width: 100%; float: left;}
+.msg-inbox .right-side .usercontents .usr-imgg{width: 50px; float: left; margin-right: 15px;}
+.msg-inbox .right-side .usercontents .usr-imgg img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.msg-inbox .right-side .usercontents .usr-contt{width: calc(100% - 65px); float: left;}
+.msg-inbox .right-side .usercontents .usr-contt h5{display: inline-block; margin: 0 10px 0 0px;}
+.msg-inbox .right-side .usercontents .usr-contt .content{padding: 10px 0px;}
+.msg-inbox .right-side .usercontents .usr-contt .content h5{margin-bottom: 20px;}
+
+.msg-inbox .right-side .footer{
+  position: absolute;
+  bottom: 0;
+  width: 97%;
+  height: 100px;
+  height: 70px;
+  background:#779f4f00;
+  padding: 4px 12px 4px 4px;
+  border: 0;
+  margin-bottom: 1px;
+  border: 1px solid#ccc
+}
+.msg-inbox .right-side .footer .input-group{
+  position: relative;
+  display: flex;  
+  align-items: stretch;
+  width: 100%;
+}
+
+.msg-inbox .right-side .footer textarea{
+background-color: transparent;
+border: 0 !important;
+height: 60px !important;
+overflow-y: auto;
+padding: 10px;
+resize: none;
+}
+.msg-inbox .right-side .footer .upload-rsm{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  display: flex;
+}
+.msg-inbox .right-side .footer .send-btn{
+background:#FF6600 !important;
+box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0), 0 0px 0px rgba(0, 0, 0, 0.0) !important;
+padding: 6px 12px !important;
+margin: auto;
+}
+.msg-inbox .right-side .footer i{
+  font-size: 18px;
+  color:gray;
+  transform: rotate(90deg);
+  padding: 0 10px;
+}
+
+
+.msg-inbox .right-side .footer .input-group-append{padding: 17px 2px; display: flex;}
+.msg-inbox .right-side .footer .input-group-append .upload-rsm p{
+  position: relative;
+  overflow: hidden;
+}
+.msg-inbox .right-side .footer .input-group-append .upload-rsm p i{font-size: 20px; padding: 0px 10px; color: gray;}
+.msg-inbox .right-side .footer .input-group-append .btn{border-radius: 5px;
+  background-color:
+  #f60 !important;
+  border-color:
+  #f60 !important;
+}
+.file-infomsg{
+position: relative;
+overflow: hidden;
+}
+
+/* Style End for msg-inbox*/
+
+/* Style start for admin profile*/
+
+.admin-profile .hed-rrow{margin-bottom: 15px;}
+.admin-profile .hed-rrow h4{margin: 0;}
+.admin-profile .hed-rrow .btn{
+  float: right;
+  margin-top: -20px;
+  background-color:#f60 !important;
+  border-color:#f60 !important;
+  border-radius: 16px;
+  padding: 8px 20px;
+}
+.admin-profile .header .btn, {
+  float: right;
+  margin-top: -20px;
+  background-color:#f60 !important;
+  border-color:#f60 !important;
+  border-radius: 16px;
+}
+
+.admin-profile .header .right-block span{float: left; margin-right: 16px;}
+
+.admin-profile .header .right-block ul.start-list li{color:#FFB901; margin: 0 2px;}
+.admin-profile .header .right-block ul.start-list li i{font-size: 16px;}
+.admin-profile .header .right-block .review-list{width: 100%; float: left;}
+.admin-profile .header .right-block .review-list li{margin: 12px 0px;}
+.admin-profile .header .right-block .review-list li img{margin-right: 16px;}
+
+.admin-profile .job-box{
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  float: left;
+}
+.admin-profile .avl-job{padding: 20px; width: 100%; float: left;}
+.admin-profile .avl-job .n-job{width: calc(100% - 100px); float: left;}
+.admin-profile .avl-job .n-job strong{ font-size:40px}
+.admin-profile .avl-job .img{width: 100px; float: left;}
+.admin-profile .v-more{
+  border-top: 1px solid#ccc;
+  padding: 15px;
+  text-align: center;
+  float: left;
+  width: 100%;
+}
+.admin-profile .v-more a{color:#f60; font-size: 20px;}
+
+.admin-profile .ctjob{margin-top: 15px; margin-bottom: 30px;}
+.admin-profile .ctjob .crrnt-jb{
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  float: left;
+  min-height: 484px;
+}
+.admin-profile .ctjob .crrnt-jb .hed{
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  float: left;
+}
+.admin-profile .ctjob .crrnt-jb .hed p{float: left;}
+.admin-profile .ctjob .crrnt-jb .hed a{float: right;}
+.admin-profile .ctjob .skill-list{
+  float: left;
+  width: 100%;
+  padding: 10px 15px;
+}
+.admin-profile .ctjob .skill-list ul li{
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0px;
+}
+.admin-profile .ctjob .skill-list  ul li .image{float: left; width: 50px;}
+.admin-profile .ctjob .skill-list  ul li .left-img{
+  padding: 5px 0px;
+  border: 1px solid#ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+.admin-profile .ctjob .skill-list  ul li .contt{float: left; width: calc(100% - 50px); padding-left: 10px; padding-right: 6px;}
+.admin-profile .ctjob .skill-list ul li .contt h5{float: left; display: block; width: 79%; margin: 2px 0px 6px;;}
+.admin-profile .ctjob .skill-list ul li .contt span{float: right;}
+.admin-profile .ctjob .skill-list ul li .contt p{float: left; width: 100%; font-size: 13px; margin-bottom: 6px;}
+
+.admin-profile .ctjob .skill-list  ul li .imgs{width: 70px;}
+.admin-profile .ctjob .skill-list  ul li .contty{float: left; width: calc(100% - 130px); position: relative;}
+.admin-profile .ctjob .skill-list  ul li .contty span{position: absolute; right: 30%; top: 6px;}
+.admin-profile .ctjob .skill-list  ul li .r-btn{float: right; width: 55px;}
+.admin-profile .ctjob .skill-list  ul li .r-btn .btn{
+  border-radius: 8px;
+  box-shadow: none;
+  border: 1px solid #ccc;
+  padding: 3px 10px;
+}
+.admin-profile .ctjob .skill-list  ul li .contty p{margin-bottom: 0px;}
+.admin-profile .ctjob .skill-list  ul li .contty h5{margin: 2px 0px 5px;}
+
+.skill-list .imgs img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Style end for admin profile*/
+
+.intrvw-typ .checkbox {
+  /* width: 30%; */
+  color: #fff;
+}
+.intrvw-typ .switch-label {
+  width: 100%;
+  color: #fff;
+}
+
+  .candidate-profile{margin-top: 80px; background-color: #fff;}
+  .candidate-profile .hedr{
+    background-color:#f3f3f3;
+    padding: 12px 20px;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 16px;
+  }
+  .candidate-profile .hedr p{font-size: 20px;}
+  .candidate-profile .title{margin-bottom: 24px;}
+  .candidate-profile .data-row{padding: 10px 16px;}
+  .candidate-profile .persnl-info p{color: #4f4b4b;}
+  .candidate-profile .resume .docs{
+    width: 50px;
+    height: 50px;
+    background-color:
+    #f3f3f3;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 8px;
+  }
+  .candidate-profile .resume .docs img{width: 36px; height: 36px;}
+  .candidate-profile strong{color: #4f4e4e; display: block; margin-bottom: 8px;}
+  .candidate-profile .skillls .usr-skills .slct p{color:#fff; margin: 0; display: inline-block; margin-right: 4px; background-color:#f60;
+    padding: 4px 10px;
+    border-radius: 5px;}
+
+  footer{margin: 0px 15px 0 235px;}
+
+  /* .radio-switch{
+    background-color:transparent;
+    box-shadow: none;
+  }
+  .radio-switch label{border-radius: 20px !important; color:#fff;}
+  .radio-switch .bg-greens{background-color: #fff; color: #000;}
+  .radio-switch .bg-red{background-color: #fff; color: #000;}
+  .radio-switch .active{background-color:#4CAF50 !important; color: #fff;} */
+
+  
+.radio-switch {width: 124px; border-radius: 15px; background: #fff; box-shadow: none !important;}
+.radio-switch .switch-input:checked + .switch-label{background: green; color:#fff; font-weight: normal; border-radius: 0;}
+[type="radio"]:checked + label::after, [type="radio"].with-gap:checked + label::after{
+  background-color: transparent;
+  border-color: transparent;
+}
+.radio-switch > [type="radio"]:not(:checked) + label::before, [type="radio"]:not(:checked) + label::after{border-color: transparent;}
+.radio-switch > [type="radio"]:checked + label{padding-left: 0px;}
+.radio-switch > [type="radio"]:not(:checked) + label{padding-left: 0px; border: 1px solid red; color:red; border-radius: 0;;}
+  .radio-switch .switch-label{width:62px;}
+  .radio-switch .active{
+    background:green !important;
+    color:#fff !important;
+    border-color: green !important;
+  }
+  .radio-switch .deactive{
+    border: 1px solid red !important;
+    color:red !important;
+    background-color:#fff !important;
+  }
+  .radio-switch .switch-selection{
+    background-color: transparent !important; background-image: none !important;
+  }
+
+.modal-header .close{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color:#a29d9d;
+  opacity: 1;
+  color:#fff;
+  font-size: 15px;
+}
+
+  table tr td.status .btn{width: 100px;}
+  .send-message {
+    display: none;
+}
+
+/* chat box style */
+.acts{display: block !important;}
+
+/*-------chat box--------*/
+    /* Button used to open the chat form - fixed at the bottom of the page */
+    .open-button {
+      background-color: #555;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 280px;
+    }
+    
+    /* The popup chat - hidden by default */
+    .chat-popup {
+      display: none;
+      position: fixed;
+      bottom: 6px;
+      right: 15px;
+      /* border: 3px solid #f1f1f1; */
+      border: 3px solid #ccc;
+      z-index: 10;
+      border-radius: 6px;
+      padding: 5px;
+    }
+    
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 300px;
+      padding: 10px;
+      background-color: white;
+    }
+    
+    /* Set a style for the submit/send button */
+    .form-container .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+      opacity: 0.8;
+    }
+    
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: red;
+    }
+    
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover, .open-button:hover {
+      opacity: 1;
+    }
+
+    .send-msgg{
+        border: 1px solid#ccc;
+        padding: 10px 10px;
+        width: 100%;
+        float: left;
+    }
+    .send-msgg span{float: right;}
+    .msg-snd{
+    width: 100%;
+    float: left;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    height: 66px;
+    background:#fff;
+    padding: 10px 2px;
+    }
+    .msg-snd textarea{
+        width: 60%;
+        float: left;
+        padding: 5px 10px;
+        margin: 5px 0 0px 0;
+        border: none;
+        background:#fff;
+        resize: none;
+        height: 80%;
+    }
+    .msg-snd textarea:focus{
+        background-color:transparent;
+        outline: none;
+    }
+    .msg-snd .file-info{
+      width: 20%;
+      float: left;
+      position: relative;
+      min-height: 50px;
+max-height: 50px;
+overflow-y: scroll;
+overflow-x: hidden;
+    }
+    .label-info{
+      background-color:transparent;   
+      word-wrap: break-word;   
+      display: block;    
+      width: 100%;   
+      font-size: 10px;
+      color:#000;
+      white-space: break-spaces;
+    }
+    .msg-snd i{
+      font-size: 20px;
+      padding: 0px 10px;
+      color:gray;
+      transform: rotate(90deg);
+      margin-top: 14px;
+    }
+    .msg-snd .snds{
+        width: 18%;
+        float: right;
+        padding: 8px 4px;
+        margin-top: 4px;
+        background-color: #f60;
+        margin-right: 2px;
+    }
+
+    .msg-rcbr{
+        border: 1px solid#ccc;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    .msg-rcbr a{
+        display: block;
+        padding: 10px;
+        text-decoration: none !important;
+    }
+    .msg-rcbr a i{float: right;}
+    #main-box {
+
+    height: 220px;
+    overflow: auto;
+
+}
+
+
+.view_profile{padding: 20px;}
+.justify-content-between span{float: left;
+margin-right: 10px;
+}
+.we_work{width: 34%;}
+.we_work input.twlv{margin-left: 10px;}
+.send-btn{
+  padding: 0px 10px !important;
+  border-radius: 4px !important; 
+}
+.error-msg{
+  border-color: red;
+}
+/* Chat box new cand*/
+
+.main-box .cc{
+  border: 1px solid #ccc;
+  padding: 10px 10px;
+  box-shadow: 0px 4px 10px rgba(10,16,20,.24),0px 0px 4px rgba(10,16,20,.12);
+  margin: 5px 5px;
+}
+.main-box .cc p{word-wrap: break-word; font-size: 13px;}
+.main-box .cc span{
+  display: block;
+  text-align: right;
+  font-size: 10px;
+}
+#closeButton{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color:#F60;
+  opacity: 1;
+  color:#fff;
+  font-size: 15px;
+  position: absolute;
+right: 0px;
+top: 1px;
+}
+td.empty-colum {
+    width: 66%;
+    position: fixed;
+    margin: auto;
+}
+.bg-colors{
+  background-color:
+  #f06609;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.social-medialink{
+  min-height: 300px;
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* .reset_pass{padding: 50px 0px;}
+
+
+.reset_pass .card{
+  margin: 100px 0px 0px;
+  border-radius: 8px;
+}
+.reset_pass .card-header{
+  text-align: center;
+  padding: 16px 10px;
+}
+.reset_pass .card-body{padding: 20px 15px;} */
+

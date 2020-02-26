@@ -1,0 +1,34 @@
+
+Note: Give Onliy id NAME OR CLASS A DIVE  LIKE      ID="#tt"
+Remember always '<div></div>'; code is important .. ('').
+
+
+<script>
+//Add Input Fields
+$(document).ready(function() {
+    var max_fields = 10; //Maximum allowed input fields 
+    var wrapper    = $(".wrapper"); //Input fields wrapper
+    var add_button = $(".add_fields"); //Add button class or ID
+    var x = 1; //Initial input field is set to 1
+ 
+ //When user click on add input button
+ $(add_button).click(function(e){
+        e.preventDefault();
+ //Check maximum allowed input fields
+        if(x < max_fields){ 
+            x++; //input field increment
+ //add input field
+            $("#tt").append(
+				'<div class="form-group"> <div class="row" > <div class="col-md-6"> <label for="email">Designation</label> <input type="text" name="designation" class="form-control" placeholder="Sr. Designer" > </div> <div class="col-md-6"> <label for="dob">Company</label> <input type="text" name="company" class="form-control" placeholder="Cypress Web India (Pvt.) Ltd"> </div> </div> </div> <div class="form-group"> <div class="row"> <div class="col-md-6"> <label for="email">Started working from </label> <div class="row"> <div class="col-md-6"> <select class="form-control" id="sel1" name="started_working_from"> <option>Jan</option> <option>Feb</option> <option>March</option> <option>April</option> </select> </div> <div class="col-md-6"> <select class="form-control" id="sel1" name="salary"> <option>2018</option> <option>2017</option> <option>2016</option> <option>2015</option> </select> </div> </div> </div> <div class="col-md-6"> <label for="dob">Salary </label> <div class="row"> <div class="col-md-4"> <select class="form-control" id="sel1"> <option>5Lakh</option> <option>4Lakh</option> <option>6Lakh</option> <option>7Lakh</option> </select> </div> <div class="col-md-4"> <select class="form-control" id="sel1"> <option>30Thousand</option> <option>40Thousand</option> <option>50Thousand</option> <option>60Thousand</option> </select> </div> <div class="col-md-4"> <select class="form-control" id="sel1"> <option>Anually</option> <option>Monthly</option> </select> </div> </div> </div> </div> </div>    <a href="javascript:void(0);" class="remove_field">Remove</a></div></div>',
+				);
+        }
+    });
+ 
+    //when user click on remove button
+    $(wrapper).on("click",".remove_field", function(e){ 
+        e.preventDefault();
+ $(this).parent("#tt").remove(); //remove inout field
+ x--; //inout field decrement
+    })
+});
+</script>
